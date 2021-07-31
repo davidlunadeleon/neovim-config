@@ -1,6 +1,7 @@
 -- Load config
 local modules = {
-	"options"
+    "options",
+    "mappings"
 }
 
 for i = 1, #modules, 1 do
