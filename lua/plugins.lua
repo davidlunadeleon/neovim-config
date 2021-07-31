@@ -14,7 +14,14 @@ local use = require('packer').use
 require('packer').startup({function()
 	use 'wbthomason/packer.nvim' -- Package manager
 	use 'shaunsingh/nord.nvim' -- Nord theme
-	use 'nvim-treesitter/nvim-treesitter'
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		requires = {
+			'nvim-treesitter/nvim-treesitter-refactor',
+			'nvim-treesitter/nvim-treesitter-textobjects'
+		},
+		run = ':TSUpdate'
+	}
 	use 'neovim/nvim-lspconfig' -- Configurations for the built-in LSP client
 	use 'hrsh7th/nvim-compe' -- Autocompletion
 	use 'L3MON4D3/LuaSnip' -- Snippets
