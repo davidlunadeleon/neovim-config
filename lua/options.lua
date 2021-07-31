@@ -1,0 +1,19 @@
+local opt = vim.opt
+local g = vim.g
+
+-- General:
+opt.termguicolors = true
+opt.cul = true
+opt.clipboard = "unnamedplus"
+opt.scrolloff = 5
+opt.linebreak = true
+opt.wrap = true
+
+-- Numbers:
+opt.number = true
+opt.numberwidth = 4
+
+-- Indentline:
+opt.expandtab = true
+opt.shiftwidth = 4
+opt.smardindent = true
