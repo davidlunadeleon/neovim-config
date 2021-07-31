@@ -23,3 +23,6 @@ opt.shiftwidth = 4
 opt.tabstop = 4
 opt.smartdindent = true
 
+-- Set completeopt to have a better completion experience
+opt.completeopt = 'menuone,noselect'
+
