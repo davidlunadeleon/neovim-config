@@ -9,11 +9,16 @@ opt.scrolloff = 5
 opt.linebreak = true
 opt.wrap = true
 
+-- Search:
+opt.ignorecase = true
+opt.smartcase = true
+
 -- Numbers:
 opt.number = true
 opt.numberwidth = 4
 
--- Indentline:
+-- Indentation:
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.smardindent = true
+
