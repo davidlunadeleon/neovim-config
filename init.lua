@@ -2,7 +2,9 @@
 local modules = {
     'options',
     'mappings',
-    'commands'
+    'commands',
+    'plugins',
+    'looks'
 }
 
 for i = 1, #modules, 1 do
