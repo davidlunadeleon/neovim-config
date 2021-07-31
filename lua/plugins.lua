@@ -6,17 +6,21 @@ local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-  execute 'packadd packer.nvim'
+	fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+	execute 'packadd packer.nvim'
 end
 
 local use = require('packer').use
 require('packer').startup({function()
-    use 'wbthomason/packer.nvim' -- Package manager
-    use 'shaunsingh/nord.nvim' -- Nord theme
+	use 'wbthomason/packer.nvim' -- Package manager
+	use 'shaunsingh/nord.nvim' -- Nord theme
+	use 'nvim-treesitter/nvim-treesitter'
+	use 'neovim/nvim-lspconfig' -- Configurations for the built-in LSP client
+	use 'hrsh7th/nvim-compe' -- Autocompletion
+	use 'L3MON4D3/LuaSnip' -- Snippets
 end,
 config = {
-    display = {
-        open_fn = require('packer.util').float
+	display = {
+		open_fn = require('packer.util').float
     }
 }})

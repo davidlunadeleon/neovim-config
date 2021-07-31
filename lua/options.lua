@@ -18,7 +18,8 @@ opt.number = true
 opt.numberwidth = 4
 
 -- Indentation:
-opt.expandtab = true
+opt.expandtab = false
 opt.shiftwidth = 4
-opt.smardindent = true
+opt.tabstop = 4
+opt.smartdindent = true
 
