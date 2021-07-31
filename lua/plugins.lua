@@ -34,6 +34,10 @@ require('packer').startup({function()
 		config = [[require('config.compe')]]
 	}
 	use 'L3MON4D3/LuaSnip' -- Snippets
+	use {
+		'kabouzeid/nvim-lspinstall', -- Install LSPs for specified languages
+		config = [[require('config.lspinstall')]]
+	}
 end,
 config = {
 	display = {
