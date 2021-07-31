@@ -25,7 +25,10 @@ require('nvim-treesitter.configs').setup {
 		'typescript',
 	},
 	highlight = {
-		enable = true, -- false will disable the whole extension
+		enable = true -- false will disable the whole extension
+	},
+	indent = {
+		enable = true
 	}
 }
 
