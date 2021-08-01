@@ -1,23 +1,21 @@
+local condition = require('galaxyline.condition')
+local buffer = require('galaxyline.provider_buffer')
 local gl = require('galaxyline')
 local gls = gl.section
 
 local colors = {
-	fg = '#4C566A',
-	bg = '#373E4D',
+	fg = '#4c566a',
+	bg = '#434C5E',
 	green = '#A3BE8C',
 	orange = '#FF8800',
 	magenta = '#B48EAD',
 	blue = '#81A1C1',
-	red = '#BF616A'
+	red = '#BF616A',
+	yellow = '#ebcb8b',
+	grey = '#d8dee9'
 }
 
-local buffer_not_empty = function()
-	if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
-		return true
-	end
-	return false
-end
-
+-- Left side
 gls.left[1] = {
 	FirstElement = {
 		provider = function() return '▋' end,
@@ -33,80 +31,79 @@ gls.left[2] = {
 		end,
 		separator = '',
 		separator_highlight = {colors.blue,function()
-			if not buffer_not_empty() then
+			if not condition.buffer_not_empty() then
 				return colors.blue
 			end
-			return colors.bg
+			return colors.yellow
 		end},
 		highlight = {colors.fg,colors.blue,'bold'},
 	},
 }
 
-gls.left[3] ={
-	FileIcon = {
-		provider = 'FileIcon',
-		condition = buffer_not_empty,
-		highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
-	},
+gls.left[3] = {
+	FileTypeName = {
+		provider = { 'FileIcon', buffer.get_buffer_filetype },
+		condition = condition.buffer_not_empty,
+		separator = '',
+		separator_highlight = {colors.yellow,colors.bg},
+		highlight = {colors.fg, colors.yellow}
+	}
 }
 
 gls.left[4] = {
 	FileName = {
-		provider = {'FileName','FileSize'},
-		condition = buffer_not_empty,
-		separator = '',
-		separator_highlight = {colors.blue,colors.bg},
+		provider = 'FileName',
+		condition = condition.buffer_not_empty,
 		highlight = {colors.magenta,colors.bg}
 	}
 }
 
 gls.left[5] = {
-	GitIcon = {
-		provider = function() return '  ' end,
-		condition = buffer_not_empty,
-		highlight = {colors.bg,colors.blue},
+	FileSize = {
+		provider = 'FileSize',
+		icon = '💾Size: ',
+		condition = condition.buffer_not_empty,
+		separator = '',
+		separator_highlight = {colors.bg,colors.blue},
+		highlight = {colors.magenta,colors.bg}
 	}
 }
+
 gls.left[6] = {
-	GitBranch = {
-		provider = 'GitBranch',
-		condition = buffer_not_empty,
+	GitBranchAndIcon = {
+		provider = { function () return '  ' end, 'GitBranch' },
+		condition = condition.buffer_not_empty,
 		highlight = {colors.fg,colors.blue},
 	}
 }
 
-local checkwidth = function()
-	local squeeze_width	= vim.fn.winwidth(0) / 2
-	if squeeze_width > 40 then
-		return true
-	end
-	return false
-end
+-- gls.left[7] = {
+-- 	DiffAdd = {
+-- 		provider = 'DiffAdd',
+-- 		condition = condition.git_check_workspace,
+-- 		icon = ' ',
+-- 		highlight = {colors.green,colors.blue},
+-- 	}
+-- }
+-- 
+-- gls.left[8] = {
+-- 	DiffModified = {
+-- 		provider = 'DiffModified',
+-- 		condition = condition.git_check_workspace,
+-- 		icon = ' ',
+-- 		highlight = {colors.orange,colors.blue},
+-- 	}
+-- }
+-- 
+-- gls.left[9] = {
+-- 	DiffRemove = {
+-- 		provider = 'DiffRemove',
+-- 		condition = condition.git_check_workspace,
+-- 		icon = ' ',
+-- 		highlight = {colors.red,colors.blue},
+-- 	}
+-- }
 
-gls.left[7] = {
-	DiffAdd = {
-		provider = 'DiffAdd',
-		condition = checkwidth,
-		icon = ' ',
-		highlight = {colors.green,colors.blue},
-	}
-}
-gls.left[8] = {
-	DiffModified = {
-		provider = 'DiffModified',
-		condition = checkwidth,
-		icon = ' ',
-		highlight = {colors.orange,colors.blue},
-	}
-}
-gls.left[9] = {
-	DiffRemove = {
-		provider = 'DiffRemove',
-		condition = checkwidth,
-		icon = ' ',
-		highlight = {colors.red,colors.blue},
-	}
-}
 gls.left[10] = {
 	LeftEnd = {
 		provider = function() return '' end,
@@ -115,6 +112,7 @@ gls.left[10] = {
 		highlight = {colors.blue,colors.blue}
 	}
 }
+
 gls.left[11] = {
 	DiagnosticError = {
 		provider = 'DiagnosticError',
@@ -122,11 +120,13 @@ gls.left[11] = {
 		highlight = {colors.red,colors.bg}
 	}
 }
+
 gls.left[12] = {
 	Space = {
-		provider = function () return ' ' end
+		provider = function () return '' end
 	}
 }
+
 gls.left[13] = {
 	DiagnosticWarn = {
 		provider = 'DiagnosticWarn',
@@ -134,6 +134,35 @@ gls.left[13] = {
 		highlight = {colors.blue,colors.bg},
 	}
 }
+
+-- Middle
+gls.mid[1] = {
+	ShowLspClient = {
+		provider = 'GetLspClient',
+		condition = function ()
+			local tbl = {['dashboard'] = true,['']=true}
+			if tbl[vim.bo.filetype] then
+				return false
+			end
+			return true
+		end,
+		icon = ' LSP: ',
+		separator = '',
+		separator_highlight = {colors.bg,colors.red},
+		highlight = {colors.grey,colors.red}
+	}
+}
+
+gls.mid[2] = {
+	EndLsp = {
+		provider = function() return '' end,
+		separator = '',
+		separator_highlight = {colors.red,colors.bg},
+		highlight = {colors.red,colors.bg}
+	}
+}
+
+-- Right side
 gls.right[1]= {
 	FileFormat = {
 		provider = 'FileFormat',
@@ -142,6 +171,7 @@ gls.right[1]= {
 		highlight = {colors.fg,colors.blue},
 	}
 }
+
 gls.right[2] = {
 	LineInfo = {
 		provider = 'LineColumn',
@@ -150,6 +180,7 @@ gls.right[2] = {
 		highlight = {colors.fg,colors.blue},
 	},
 }
+
 gls.right[3] = {
 	PerCent = {
 		provider = 'LinePercent',
@@ -158,27 +189,10 @@ gls.right[3] = {
 		highlight = {colors.magenta,colors.bg},
 	}
 }
+
 gls.right[4] = {
 	ScrollBar = {
 		provider = 'ScrollBar',
 		highlight = {colors.magenta,colors.blue},
-	}
-}
-
-gls.short_line_left[1] = {
-	BufferType = {
-		provider = 'FileTypeName',
-		separator = '',
-		separator_highlight = {colors.blue,colors.bg},
-		highlight = {colors.fg,colors.blue}
-	}
-}
-
-gls.short_line_right[1] = {
-	BufferIcon = {
-		provider= 'BufferIcon',
-		separator = '',
-		separator_highlight = {colors.blue,colors.bg},
-		highlight = {colors.fg,colors.blue}
 	}
 }
