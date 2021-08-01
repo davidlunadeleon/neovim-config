@@ -38,6 +38,15 @@ require('packer').startup({function()
 		'kabouzeid/nvim-lspinstall', -- Install LSPs for specified languages
 		config = [[require('config.lspinstall')]]
 	}
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+	}
+	use {
+		'windwp/nvim-autopairs',
+		config = [[require('config.autopairs')]]
+	}
+	use 'windwp/nvim-ts-autotag'
 end,
 config = {
 	display = {
