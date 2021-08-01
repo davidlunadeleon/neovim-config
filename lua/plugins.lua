@@ -49,6 +49,7 @@ require('packer').startup({function()
 	use 'windwp/nvim-ts-autotag'
 	use 'kyazdani42/nvim-web-devicons'
 	use 'romgrk/barbar.nvim'
+	use 'p00f/nvim-ts-rainbow'
 end,
 config = {
 	display = {
