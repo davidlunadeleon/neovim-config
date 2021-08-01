@@ -55,6 +55,10 @@ require('packer').startup({function()
 		branch = 'main',
 		config = [[require('config.galaxyline')]]
 	}
+	use {
+		'lukas-reineke/indent-blankline.nvim',
+		config = [[require('config.indent-blankline')]]
+	}
 end,
 config = {
 	display = {
