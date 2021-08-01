@@ -50,6 +50,11 @@ require('packer').startup({function()
 	use 'kyazdani42/nvim-web-devicons'
 	use 'romgrk/barbar.nvim'
 	use 'p00f/nvim-ts-rainbow'
+	use {
+		'glepnir/galaxyline.nvim',
+		branch = 'main',
+		config = [[require('config.galaxyline')]]
+	}
 end,
 config = {
 	display = {
