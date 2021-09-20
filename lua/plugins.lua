@@ -29,9 +29,10 @@ require('packer').startup({function()
 		'neovim/nvim-lspconfig', -- Configurations for the built-in LSP client
 		config = [[require('config.lspconfig')]]
 	}
+	use 'hrsh7th/cmp-nvim-lsp'
 	use {
-		'hrsh7th/nvim-compe', -- Autocompletion
-		config = [[require('config.compe')]]
+		'hrsh7th/nvim-cmp', -- Autocompletion
+		config = [[require('config.nvim-cmp')]]
 	}
 	use 'L3MON4D3/LuaSnip' -- Snippets
 	use {
