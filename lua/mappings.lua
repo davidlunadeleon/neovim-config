@@ -60,5 +60,5 @@ end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
-map('n', '<leader>to', '<cmd>:ToggleTermOpenAll<cr>', { silent = true })
+map('n', '<leader>to', [[<cmd>:ToggleTermOpenAll<cr><C-\><C-n><C-n><C-n>]], { silent = true })
 map('n', '<leader>tc', '<cmd>:ToggleTermCloseAll<cr>', { silent = true })
