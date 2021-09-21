@@ -21,11 +21,11 @@ map('n', '<c-down>', '<cmd>wincmd j<cr>', {})
 map('n', '<c-up>', '<cmd>wincmd k<cr>', {})
 map('n', '<c-right>', '<cmd>wincmd l<cr>', {})
 
--- barbar.nvim mappings
+-- Bufferline mappings
 
 -- Move tab left or right
-map('n', '<A-<>', '<cmd>:BufferMovePrevious<cr>', { silent = true })
-map('n', '<A->>', '<cmd>:BufferMoveNext<cr>', { silent = true })
+map('n', '<A-<>', '<cmd>:BufferLineMovePrev<cr>', { silent = true })
+map('n', '<A->>', '<cmd>:BufferLineMoveNext<cr>', { silent = true })
 
 -- Move to buffer in position...
 map('n', '<A-1>', '<cmd>:BufferLineGoToBuffer 1<cr>', { silent = true })
@@ -40,3 +40,7 @@ map('n', '<A-9>', '<cmd>:BufferGotoLast<cr>', { silent = true })
 
 -- Close buffer
 map('n', '<A-c>', '<cmd>:BufferClose<cr>', {silent = true })
+
+map('n', '<C-n>', '<cmd>:NvimTreeToggle<cr>', {})
+map('n', '<leader>f', '<cmd>:NvimTreeFindFile<cr>', {})
+

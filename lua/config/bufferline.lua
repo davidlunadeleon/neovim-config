@@ -19,8 +19,15 @@ require('bufferline').setup({
 		enforce_regular_tabs = true,
 		always_show_bufferline = true,
 		separator_style = 'slant',
-		sort_by = 'tabs',
-		show_tab_indicators = true
+		show_tab_indicators = true,
+		offsets = {
+			{
+				filetype = 'NvimTree',
+				text = 'File explorer',
+				highlight = 'Directory',
+				text_align = 'left'
+			}
+		}
 	}
 })
 
