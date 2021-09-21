@@ -52,9 +52,8 @@ require('packer').startup({function()
 	use 'romgrk/barbar.nvim'
 	use 'p00f/nvim-ts-rainbow'
 	use {
-		'glepnir/galaxyline.nvim',
-		branch = 'main',
-		config = [[require('config.galaxyline')]]
+		'shadmansaleh/lualine.nvim',
+		config = [[require('config.lualine')]]
 	}
 	use {
 		'lukas-reineke/indent-blankline.nvim',
