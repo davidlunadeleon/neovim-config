@@ -20,4 +20,12 @@ setup({
 	auto_resize = true,
 	lsp_diagnostics = true,
 	icon_padding = ' ',
+	window_picker_exclude = {
+		filetype = {
+			'packer'
+		},
+		buftype = {
+			'terminal'
+		}
+	}
 })
