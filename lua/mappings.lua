@@ -39,7 +39,7 @@ map('n', '<A-8>', '<cmd>:BufferLineGoToBuffer 8<cr>', { silent = true })
 map('n', '<A-9>', '<cmd>:BufferGotoLast<cr>', { silent = true })
 
 -- Close buffer
-map('n', '<A-c>', '<cmd>:BufferClose<cr>', {silent = true })
+map('n', '<A-c>', '<cmd>:Bdelete<cr>', {silent = true })
 
 -- NvimTree mappings
 map('n', '<C-n>', '<cmd>:NvimTreeToggle<cr>', {})

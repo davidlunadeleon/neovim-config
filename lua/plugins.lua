@@ -72,6 +72,7 @@ require('packer').startup({function()
 		},
 		config = [[require('config.nvim-tree')]]
 	}
+	use 'famiu/bufdelete.nvim'
 end,
 config = {
 	display = {
