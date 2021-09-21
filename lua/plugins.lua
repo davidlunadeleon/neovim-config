@@ -49,7 +49,6 @@ require('packer').startup({function()
 	}
 	use 'windwp/nvim-ts-autotag'
 	use 'kyazdani42/nvim-web-devicons'
-	use 'romgrk/barbar.nvim'
 	use 'p00f/nvim-ts-rainbow'
 	use {
 		'shadmansaleh/lualine.nvim',
@@ -58,6 +57,13 @@ require('packer').startup({function()
 	use {
 		'lukas-reineke/indent-blankline.nvim',
 		config = [[require('config.indent-blankline')]]
+	}
+	use {
+		'akinsho/bufferline.nvim',
+		requires = {
+			'kyazdani42/nvim-web-devicons'
+		},
+		config = [[require('config.bufferline')]]
 	}
 end,
 config = {

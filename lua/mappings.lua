@@ -28,14 +28,14 @@ map('n', '<A-<>', '<cmd>:BufferMovePrevious<cr>', { silent = true })
 map('n', '<A->>', '<cmd>:BufferMoveNext<cr>', { silent = true })
 
 -- Move to buffer in position...
-map('n', '<A-1>', '<cmd>:BufferGoto 1<cr>', { silent = true })
-map('n', '<A-2>', '<cmd>:BufferGoto 2<cr>', { silent = true })
-map('n', '<A-3>', '<cmd>:BufferGoto 3<cr>', { silent = true })
-map('n', '<A-4>', '<cmd>:BufferGoto 4<cr>', { silent = true })
-map('n', '<A-5>', '<cmd>:BufferGoto 5<cr>', { silent = true })
-map('n', '<A-6>', '<cmd>:BufferGoto 6<cr>', { silent = true })
-map('n', '<A-7>', '<cmd>:BufferGoto 7<cr>', { silent = true })
-map('n', '<A-8>', '<cmd>:BufferGoto 8<cr>', { silent = true })
+map('n', '<A-1>', '<cmd>:BufferLineGoToBuffer 1<cr>', { silent = true })
+map('n', '<A-2>', '<cmd>:BufferLineGoToBuffer 2<cr>', { silent = true })
+map('n', '<A-3>', '<cmd>:BufferLineGoToBuffer 3<cr>', { silent = true })
+map('n', '<A-4>', '<cmd>:BufferLineGoToBuffer 4<cr>', { silent = true })
+map('n', '<A-5>', '<cmd>:BufferLineGoToBuffer 5<cr>', { silent = true })
+map('n', '<A-6>', '<cmd>:BufferLineGoToBuffer 6<cr>', { silent = true })
+map('n', '<A-7>', '<cmd>:BufferLineGoToBuffer 7<cr>', { silent = true })
+map('n', '<A-8>', '<cmd>:BufferLineGoToBuffer 8<cr>', { silent = true })
 map('n', '<A-9>', '<cmd>:BufferGotoLast<cr>', { silent = true })
 
 -- Close buffer
