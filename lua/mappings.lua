@@ -41,6 +41,10 @@ map('n', '<A-9>', '<cmd>:BufferGotoLast<cr>', { silent = true })
 -- Close buffer
 map('n', '<A-c>', '<cmd>:BufferClose<cr>', {silent = true })
 
+-- NvimTree mappings
 map('n', '<C-n>', '<cmd>:NvimTreeToggle<cr>', {})
-map('n', '<leader>f', '<cmd>:NvimTreeFindFile<cr>', {})
 
+-- Telescope mappings
+map('n', '<leader>ft', '<cmd>:Telescope<cr>', { silent = true })
+map('n', '<leader>ff', '<cmd>:Telescope find_files<cr>', { silent = true })
+map('n', '<leader>fg', '<cmd>:Telescope live_grep<cr>', { silent = true })
