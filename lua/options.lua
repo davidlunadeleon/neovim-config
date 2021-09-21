@@ -1,6 +1,14 @@
 local opt = vim.opt
 local g = vim.g
 
+-- List specific chars
+opt.list = true
+opt.listchars:append({
+	space = '.',
+	eol = '↴',
+	tab = '<->',
+})
+
 -- General:
 opt.termguicolors = true
 opt.cul = true
@@ -25,4 +33,3 @@ opt.smartdindent = true
 
 -- Set completeopt to have a better completion experience
 opt.completeopt = 'menuone,noselect'
-
