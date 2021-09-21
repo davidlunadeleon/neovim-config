@@ -41,6 +41,7 @@ map('n', '<A-9>', '<cmd>:BufferGotoLast<cr>', { silent = true })
 
 -- Close buffer
 map('n', '<A-c>', '<cmd>:Bdelete<cr>', {silent = true })
+map('n', '<A-k>', '<cmd>:bdelete!<cr>', {silent = true})
 
 -- NvimTree mappings
 map('n', '<C-n>', '<cmd>:NvimTreeToggle<cr>', {})

@@ -16,6 +16,7 @@ opt.clipboard = "unnamedplus"
 opt.scrolloff = 5
 opt.linebreak = true
 opt.wrap = true
+opt.hidden = true
 
 -- Search:
 opt.ignorecase = true
