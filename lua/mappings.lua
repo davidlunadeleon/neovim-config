@@ -1,5 +1,6 @@
 local g = vim.g
 local map = vim.api.nvim_set_keymap
+local bufmap = vim.api.nvim_buf_set_keymap
 
 g.mapleader = ' '
 
@@ -48,3 +49,15 @@ map('n', '<C-n>', '<cmd>:NvimTreeToggle<cr>', {})
 map('n', '<leader>ft', '<cmd>:Telescope<cr>', { silent = true })
 map('n', '<leader>ff', '<cmd>:Telescope find_files<cr>', { silent = true })
 map('n', '<leader>fg', '<cmd>:Telescope live_grep<cr>', { silent = true })
+
+-- Toggleterm mappings
+
+function _G.set_terminal_keymaps()
+	local opts = {noremap = true}
+	bufmap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+end
+
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+map('n', '<leader>to', '<cmd>:ToggleTermOpenAll<cr>', { silent = true })
+map('n', '<leader>tc', '<cmd>:ToggleTermCloseAll<cr>', { silent = true })

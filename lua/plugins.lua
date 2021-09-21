@@ -73,6 +73,10 @@ require('packer').startup({function()
 		config = [[require('config.nvim-tree')]]
 	}
 	use 'famiu/bufdelete.nvim'
+	use {
+		'akinsho/toggleterm.nvim',
+		config = [[require('config.toggleterm')]]
+	}
 end,
 config = {
 	display = {
