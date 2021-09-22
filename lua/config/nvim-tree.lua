@@ -8,6 +8,7 @@ local function setup(opts)
 end
 
 setup({
+	width = '15%',
 	side = 'left',
 	ignore = {'.git', 'noode_modules', '.cache'},
 	gitignore = true,
