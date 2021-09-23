@@ -77,6 +77,10 @@ require('packer').startup({function()
 		'akinsho/toggleterm.nvim',
 		config = [[require('config.toggleterm')]]
 	}
+	use {
+		'windwp/nvim-projectconfig',
+		config = [[require('config.nvim-projectconfig')]]
+	}
 end,
 config = {
 	display = {
