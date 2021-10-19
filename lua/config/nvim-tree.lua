@@ -8,18 +8,10 @@ local function setup(opts)
 end
 
 setup({
-	width = '15%',
-	side = 'left',
 	ignore = {'.git', 'noode_modules', '.cache'},
 	gitignore = true,
-	auto_open = true,
-	auto_close = true,
-	follow = true,
 	highlight_opened_files = true,
-	tap_open = true,
 	group_empty = false,
-	auto_resize = true,
-	lsp_diagnostics = true,
 	icon_padding = ' ',
 	window_picker_exclude = {
 		filetype = {
@@ -29,4 +21,24 @@ setup({
 			'terminal'
 		}
 	}
+})
+
+require('nvim-tree').setup({
+	view = {
+		width = '15%',
+		side = 'left',
+		auto_resize = true,
+	},
+	auto_close = true,
+	diagnostics = {
+		enable = true,
+	},
+	update_to_buf_dir = {
+		enable = true,
+		auto_open = true,
+	},
+	update_focused_file = {
+		enable = true,
+	},
+	open_on_tab = true,
 })
