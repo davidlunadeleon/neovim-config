@@ -9,7 +9,7 @@ end
 
 setup({
 	ignore = {'.git', 'noode_modules', '.cache'},
-	gitignore = true,
+	gitignore = false,
 	highlight_opened_files = true,
 	group_empty = false,
 	icon_padding = ' ',
