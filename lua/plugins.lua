@@ -51,7 +51,8 @@ require('packer').startup({function()
 	use 'kyazdani42/nvim-web-devicons'
 	use 'p00f/nvim-ts-rainbow'
 	use {
-		'shadmansaleh/lualine.nvim',
+		'nvim-lualine/lualine.nvim',
+		requires = {'kyazdani42/nvim-web-devicons', opt = true},
 		config = [[require('config.lualine')]]
 	}
 	use {
