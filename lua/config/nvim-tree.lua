@@ -8,7 +8,6 @@ local function setup(opts)
 end
 
 setup({
-	ignore = {'.git', 'noode_modules', '.cache'},
 	gitignore = false,
 	highlight_opened_files = true,
 	group_empty = false,
@@ -41,4 +40,7 @@ require('nvim-tree').setup({
 		enable = true,
 	},
 	open_on_tab = true,
+	filters = {
+		custom = {'.git', 'noode_modules', '.cache'},
+	},
 })
