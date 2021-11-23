@@ -41,6 +41,6 @@ require('nvim-tree').setup({
 	},
 	open_on_tab = true,
 	filters = {
-		custom = {'.git', 'noode_modules', '.cache'},
+		custom = {'node_modules', '.cache'},
 	},
 })
