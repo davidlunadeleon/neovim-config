@@ -36,10 +36,6 @@ require('packer').startup({function()
 	}
 	use 'L3MON4D3/LuaSnip' -- Snippets
 	use {
-		'kabouzeid/nvim-lspinstall', -- Install LSPs for specified languages
-		config = [[require('config.lspinstall')]]
-	}
-	use {
 		'nvim-telescope/telescope.nvim',
 		requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
 	}
@@ -74,10 +70,6 @@ require('packer').startup({function()
 		config = [[require('config.nvim-tree')]]
 	}
 	use 'famiu/bufdelete.nvim'
-	use {
-		'akinsho/toggleterm.nvim',
-		config = [[require('config.toggleterm')]]
-	}
 	use {
 		'windwp/nvim-projectconfig',
 		config = [[require('config.nvim-projectconfig')]]
