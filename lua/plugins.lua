@@ -74,6 +74,10 @@ require('packer').startup({function()
 		'windwp/nvim-projectconfig',
 		config = [[require('config.nvim-projectconfig')]]
 	}
+	use {
+		'mhartington/formatter.nvim',
+		config = [[require('config.formatter')]]
+	}
 end,
 config = {
 	display = {

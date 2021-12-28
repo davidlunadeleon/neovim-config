@@ -4,7 +4,8 @@ local modules = {
 	'mappings',
 	'commands',
 	'plugins',
-	'looks'
+	'looks',
+	'autocmd'
 }
 
 for i = 1, #modules, 1 do
