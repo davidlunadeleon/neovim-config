@@ -11,14 +11,6 @@ setup({
 	highlight_opened_files = true,
 	group_empty = false,
 	icon_padding = ' ',
-	window_picker_exclude = {
-		filetype = {
-			'packer'
-		},
-		buftype = {
-			'terminal'
-		}
-	}
 })
 
 require('nvim-tree').setup({
@@ -44,5 +36,15 @@ require('nvim-tree').setup({
 	},
 	git = {
 		ignore = false
+	},
+	actions = {
+		open_file = {
+			window_picker = {
+				exclude = {
+					filetype = {'packer'},
+					buftype = {'terminal'}
+				}
+			}
+		}
 	}
 })
