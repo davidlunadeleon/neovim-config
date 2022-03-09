@@ -78,6 +78,10 @@ require('packer').startup({function()
 		'mhartington/formatter.nvim',
 		config = [[require('config.formatter')]]
 	}
+	use {
+		'nvim-neorg/neorg',
+		config = [[require('config.neorg')]]
+	}
 end,
 config = {
 	display = {
