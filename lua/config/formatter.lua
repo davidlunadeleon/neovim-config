@@ -6,11 +6,20 @@ local prettier = function()
 	}
 end
 
+local black = function()
+	return {
+		exe = "black",
+		args = { "-" },
+		stdin = true,
+	}
+end
+
 require('formatter').setup({
 	filetype = {
 		javascript = {prettier},
 		json = {prettier},
 		html = {prettier},
 		yaml = {prettier},
+		python = {black},
 	}
 })
