@@ -19,7 +19,6 @@ require('nvim-tree').setup({
 		side = 'left',
 		auto_resize = true,
 	},
-	auto_close = true,
 	diagnostics = {
 		enable = true,
 	},
