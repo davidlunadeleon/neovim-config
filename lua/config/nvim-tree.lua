@@ -17,12 +17,11 @@ require('nvim-tree').setup({
 	view = {
 		width = '15%',
 		side = 'left',
-		auto_resize = true,
 	},
 	diagnostics = {
 		enable = true,
 	},
-	update_to_buf_dir = {
+	hijack_directories = {
 		enable = true,
 		auto_open = true,
 	},
@@ -43,7 +42,8 @@ require('nvim-tree').setup({
 					filetype = {'packer'},
 					buftype = {'terminal'}
 				}
-			}
+			},
+			resize_window = true
 		}
 	}
 })
