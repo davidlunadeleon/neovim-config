@@ -37,7 +37,7 @@ require('packer').startup({function()
 	use 'L3MON4D3/LuaSnip' -- Snippets
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+		requires = {{'nvim-lua/plenary.nvim'}}
 	}
 	use {
 		'windwp/nvim-autopairs',
