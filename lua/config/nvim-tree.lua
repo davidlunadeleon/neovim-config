@@ -1,18 +1,3 @@
-local function setup(opts)
-	for opt, value in pairs(opts) do
-		if type(value) == 'boolean' then
-			value = value and 1 or 0
-		end
-		vim.g['nvim_tree_' .. opt] = value
-	end
-end
-
-setup({
-	highlight_opened_files = true,
-	group_empty = false,
-	icon_padding = ' ',
-})
-
 require('nvim-tree').setup({
 	view = {
 		width = '15%',
@@ -45,5 +30,12 @@ require('nvim-tree').setup({
 			},
 			resize_window = true
 		}
+	},
+	renderer = {
+		group_empty = false,
+		highlight_opened_files = "all",
+		icons = {
+			padding = " ",
+		},
 	}
 })
