@@ -1,25 +1,13 @@
-local prettier = function()
-	return {
-		exe = "prettier",
-		args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
-		stdin = true
-	}
-end
-
-local black = function()
-	return {
-		exe = "black",
-		args = { "-" },
-		stdin = true,
-	}
-end
-
 require('formatter').setup({
 	filetype = {
-		javascript = {prettier},
-		json = {prettier},
-		html = {prettier},
-		yaml = {prettier},
-		python = {black},
+		javascript = {require("formatter.filetypes.javascript").prettier},
+		json = {require("formatter.filetypes.json").prettier},
+		html = {require("formatter.filetypes.html").prettier},
+		yaml = {require("formatter.filetypes.yaml").prettier},
+		python = {require("formatter.filetypes.python").black},
+		svelte = {require("formatter.filetypes.svelte").prettier},
+		["*"] = {
+			require("formatter.filetypes.any").remove_trailing_whitespace
+		}
 	}
 })
