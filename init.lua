@@ -1,9 +1,10 @@
+-- Load lazy.nvim
+require("config.lazy")
 -- Load config
 local modules = {
 	'options',
 	'mappings',
 	'commands',
-	'plugins',
 	'looks',
 	'autocmd'
 }
