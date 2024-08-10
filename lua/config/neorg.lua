@@ -1,13 +1,13 @@
 require('neorg').setup({
 	load = {
 		['core.defaults'] = {},
-		['core.norg.completion'] = {
+		['core.completion'] = {
 			config = {
 				engine = 'nvim-cmp'
 			}
 		},
-		['core.norg.concealer'] = {},
-		['core.norg.qol.toc'] = {},
-		['core.norg.journal'] = {}
+		['core.concealer'] = {},
+		['core.qol.toc'] = {},
+		['core.journal'] = {}
 	}
 })
