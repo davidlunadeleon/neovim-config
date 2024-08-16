@@ -2,8 +2,8 @@ return {
 	'neovim/nvim-lspconfig',
 	lazy = false,
 	dependencies = {
-		{ 'ms-jpq/coq_nvim', branch = 'coq' },
-		{ 'ms-jpq/coq.artifacts', branch = 'artifacts' },
+		{ 'ms-jpq/coq_nvim',       branch = 'coq' },
+		{ 'ms-jpq/coq.artifacts',  branch = 'artifacts' },
 		{ 'ms-jpq/coq.thirdparty', branch = '3p' },
 	},
 	init = function()
@@ -16,7 +16,7 @@ return {
 	end,
 	config = function()
 		local lspconfig = require('lspconfig')
-		lspconfig.lua_ls.setup{}
+		lspconfig.lua_ls.setup {}
 		lspconfig.eslint.setup({
 			on_attach = function(client, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {
@@ -25,5 +25,6 @@ return {
 				})
 			end,
 		})
+		lspconfig.tsserver.setup {}
 	end,
 }
