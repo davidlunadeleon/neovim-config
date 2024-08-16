@@ -6,6 +6,7 @@ require("config.lazy")
 
 local modules = {
 	'mappings',
+	'options',
 }
 
 for i = 1, #modules, 1 do
