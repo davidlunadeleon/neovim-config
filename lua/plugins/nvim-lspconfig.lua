@@ -26,5 +26,6 @@ return {
 			end,
 		})
 		lspconfig.tsserver.setup {}
+		lspconfig.svelte.setup {}
 	end,
 }
