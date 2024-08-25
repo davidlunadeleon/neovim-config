@@ -27,5 +27,6 @@ return {
 		})
 		lspconfig.tsserver.setup {}
 		lspconfig.svelte.setup {}
+		lspconfig.gdscript.setup {}
 	end,
 }
