@@ -21,5 +21,7 @@ return {
 		{ "<leader>dc",  "<cmd>:lua require'dap'.continue()<cr>",          desc = "Launch debug session and resume execution" },
 		{ "<leader>dso", "<cmd>:lua require'dap'.step_over()<cr>",         desc = "Step over" },
 		{ "<leader>dsi", "<cmd>:lua require'dap'.step_into()<cr>",         desc = "Step into" },
+		{ "<leader>ds",  "<cmd>:lua require'dap'.terminate()<cr>",         desc = "Stop debugging" },
+		{ "<leader>dr",  "<cmd>:lua require'dap'.repl.toggle()<cr>",       desc = "Toggle REPL" },
 	}
 }
