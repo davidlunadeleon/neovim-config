@@ -4,6 +4,7 @@ return {
 		require('nvim-treesitter.install').update({ with_sync = true })()
 	end,
 	config = function()
+		require('nvim-dap-repl-highlights').setup {}
 		local configs = require('nvim-treesitter.configs')
 		configs.setup({
 			ensure_installed = {
@@ -24,6 +25,7 @@ return {
 				'vim',
 				'vimdoc',
 				'yaml',
+				'dap_repl'
 			},
 			sync_install = false,
 			highlight = { enable = true },
