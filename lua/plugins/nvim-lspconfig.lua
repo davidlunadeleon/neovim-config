@@ -28,5 +28,16 @@ return {
 		lspconfig.tsserver.setup {}
 		lspconfig.svelte.setup {}
 		lspconfig.gdscript.setup {}
+		lspconfig.pyright.setup {}
 	end,
+	keys = {
+		{ 'gtd', '<cmd>:lua vim.lsp.buf.declaration()<cr>',    desc = 'Go to declaration' },
+		{ 'gtD', '<cmd>:lua vim.lsp.buf.definition()<cr>',     desc = 'Go to definition' },
+		{ 'bh',  '<cmd>:lua vim.lsp.buf.hover()<cr>',          desc = 'Hover' },
+		{ 'sh',  '<cmd>:lua vim.lsp.buf.signature_help()<cr>', desc = 'Signature help' },
+		{ 'gr',  '<cmd>:lua vim.lsp.buf.references()<cr>',     desc = 'Get references' },
+		{ 'dof', '<cmd>:lua vim.diagnostic.open_float()<cr>',  desc = 'Diagnostic open float' },
+		{ 'dgp', '<cmd>:lua vim.diagnostic.goto_prev()<cr>',   desc = 'Diagnostic goto prev' },
+		{ 'dgn', '<cmd>:lua vim.diagnostic.goto_nex()<cr>',    desc = 'Diagnostic goto next' },
+	}
 }
