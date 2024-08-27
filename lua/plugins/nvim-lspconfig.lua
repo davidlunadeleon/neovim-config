@@ -38,6 +38,6 @@ return {
 		{ 'gr',  '<cmd>:lua vim.lsp.buf.references()<cr>',     desc = 'Get references' },
 		{ 'dof', '<cmd>:lua vim.diagnostic.open_float()<cr>',  desc = 'Diagnostic open float' },
 		{ 'dgp', '<cmd>:lua vim.diagnostic.goto_prev()<cr>',   desc = 'Diagnostic goto prev' },
-		{ 'dgn', '<cmd>:lua vim.diagnostic.goto_nex()<cr>',    desc = 'Diagnostic goto next' },
+		{ 'dgn', '<cmd>:lua vim.diagnostic.goto_next()<cr>',    desc = 'Diagnostic goto next' },
 	}
 }
