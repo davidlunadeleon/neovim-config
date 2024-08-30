@@ -4,14 +4,14 @@ return {
 		"nvim-neotest/nvim-nio",
 		"nvim-lua/plenary.nvim",
 		"antoinemadec/FixCursorHold.nvim",
-		"nvim-treesitter/nvim-treesitter"
+		"nvim-treesitter/nvim-treesitter",
+		"nvim-neotest/neotest-python"
 	},
 	config = function()
 		require('neotest').setup({
+			log_level = vim.log.levels.DEBUG,
 			adaptes = {
-				require('neotest-python')({
-					dap = { justMyCode = false }
-				})
+				require('neotest-python')
 			}
 		})
 	end,
