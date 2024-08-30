@@ -10,7 +10,7 @@ return {
 	config = function()
 		require('neotest').setup({
 			log_level = vim.log.levels.DEBUG,
-			adaptes = {
+			adapters = {
 				require('neotest-python')
 			}
 		})
