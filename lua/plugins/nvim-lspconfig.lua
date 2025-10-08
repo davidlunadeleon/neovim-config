@@ -15,9 +15,7 @@ return {
 		}
 	end,
 	config = function()
-		local lspconfig = require('lspconfig')
-		lspconfig.lua_ls.setup {}
-		lspconfig.eslint.setup({
+		vim.lsp.config('eslint', {
 			on_attach = function(client, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					buffer = bufnr,
@@ -25,10 +23,12 @@ return {
 				})
 			end,
 		})
-		lspconfig.ts_ls.setup {}
-		lspconfig.svelte.setup {}
-		lspconfig.gdscript.setup {}
-		lspconfig.pyright.setup {}
+		vim.lsp.enable('eslint')
+		vim.lsp.enable('gdscript')
+		vim.lsp.enable('lua_ls')
+		vim.lsp.enable('pyright')
+		vim.lsp.enable('svelte')
+		vim.lsp.enable('ts_ls')
 	end,
 	keys = {
 		{ 'gtd', '<cmd>:lua vim.lsp.buf.declaration()<cr>',    desc = 'Go to declaration' },
